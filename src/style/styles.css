@@ -1,0 +1,219 @@
+body {
+	background-color: #101010;
+	color: white;
+	font-family: "Courier New", monospace, sans-serif;
+	font-size: 14px;
+	text-shadow: 1px 1px 2px black;
+	overflow: auto;
+	background-image: url('../../img/bg.gif');
+}
+
+a {
+	color: #FFF;
+}
+a:hover {
+	color: #CDF;
+}
+abbr {
+	border: none;
+}
+
+header, section, footer {
+	display: block;
+}
+
+header > h1 {
+	font-weight: bold;
+	font-size: 32px;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+#maintable thead tr th {
+	font-size: 20px;
+	border-bottom: 1px solid #333;
+	/*background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(60, 60, 60, 0.25)));
+	background-color: rgba(0, 0, 0, 0.1);*/
+}
+
+#listbody {
+	-webkit-transition: background-color .2s ease-in-out;
+	cursor: default;
+}
+#listbody > tr {
+	-webkit-transition: background-color .2s ease-in-out;
+	font-size: 14px;
+}
+#listbody > tr .smallfont {
+	font-size: 80%;
+	text-shadow: none;
+}
+
+#listbody > tr.serverhead {
+	font-size: 15px;
+	height: 20px;
+	white-space: nowrap;
+}
+
+#listbody > tr.serverbody > td {
+	text-shadow: none;
+	font-size: 15px;
+	overflow: hidden;
+	height: 0px;
+	/*box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.5);*/
+	border-radius: 0px 0px 10px 10px;
+	padding: 0px;
+}
+#listbody > tr.serverbody > td td.number {
+	color: rgba(255, 255, 255, 0.2);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#listbody > tr.serverbody > td.disconnect-error {
+	background-color: rgba(255, 0, 0, 0.1);
+	color: #F66;
+	font-size: 125%;
+	padding: 10px;
+	padding-left: 15px;
+}
+#listbody > tr.v24 {
+	background-color: rgba(100, 100, 100, 0.3);
+}
+
+#listbody > tr.v21 {
+	background-color: rgba(75, 150, 75, 0.3);
+}
+#listbody > tr.vUnknown {
+	background-color: rgba(128, 0, 0, 0.2);
+}
+#listbody > tr.isPrivate {
+	background-color: rgba(255, 128, 0, 0.2);
+}
+#listbody > tr.hasPassword {
+	background-color: rgba(128, 255, 0, 0.2);
+}
+#listbody > tr.serverhead {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.25)), color-stop(0.1, transparent), color-stop(0.8, transparent));
+}
+
+#listbody > tr.spacer {
+	height: 20px;
+}
+
+.listwrapper {
+	overflow-y: hidden;
+	overflow-x: visible;
+	-webkit-transition: height 1s ease-in-out;
+	height: auto;
+}
+.listwrapper.closed {
+	/*height: 0px;*/
+}
+
+/*#listbody > tr.serverhead > td {
+	border-left: 1px solid rgba(128, 128, 128, 0.1);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#listbody > tr.serverhead > td:first-child {
+	border-left: none;
+	border-radius: 4px 0px 0px 0px;
+}
+#listbody > tr.serverhead > td:last-child {
+	border-right: none;
+	border-radius: 0px 4px 0px 0px;
+}*/
+.playerinfo .playername {
+	font-weight: bold;
+	width: 280px;
+}
+#listbody > tr.serverbody .normal {
+	background-color: rgba(55, 55, 55, 0.6);
+}
+#listbody > tr.serverbody .team-blue {
+	background-color: rgba(0, 32, 64, 0.6);
+}
+#listbody > tr.serverbody .team-red {
+	background-color: rgba(64, 16, 0, 0.6);
+}
+#listbody > tr.serverbody .team-green {
+	background-color: rgba(16, 64, 0, 0.6);
+}
+#listbody > tr.serverbody .team-yellow {
+	background-color: rgba(64, 48, 0, 0.6);
+}
+#listbody > tr.serverbody .spectator {
+	background-color: rgba(35, 35, 35, 0.6);
+	color: #666;
+}
+/* Padding stuff to make it look nice */
+#listbody > tr.serverbody .playerlist tr > td:first-child {
+	padding-left: 8px;
+}
+#listbody > tr.serverbody .playerlist tr > td {
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+#listbody > tr.serverbody .playerlist .normal ~ .normal > td, #listbody > tr.serverbody .playerlist .team-red ~ .team-red > td, #listbody > tr.serverbody .playerlist .team-blue ~ .team-blue > td {
+	padding-top: 0px;
+}
+
+.playerinfo .number, .playerinfo .lrscross, .playerinfo .points, .playerinfo .deaths {
+	width: 30px;
+}
+
+.extraTable {
+	background-color: rgba(40, 40, 40, 0.8);
+	width: 100%;
+	box-shadow: inset 0px 1px 5px rgba(60, 60, 60, 0.3);
+}
+.extraTable tr td {
+	padding: 2px 5px;
+	font-size: 12px;
+	margin: 0px
+}
+
+
+.clickable {
+	cursor: pointer;
+}
+.otherFont {
+	
+}
+
+.playersbar {
+	width: 64px;
+	height: 15px;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	display: inline-block;
+	border-radius: 5px;
+	overflow: hidden;
+	background-image: url('../../img/bar.png');
+	background-repeat: repeat-x;
+	border-top: 1px solid rgba(0, 0, 0, 0.4);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5);
+	margin-top: 5px;
+	text-align: left;
+}
+.playersbar > div {
+	height: 13px;
+	width: 0%;
+	background-image: url('../../img/bar.png');
+	background-repeat: repeat-x;
+	background-position: 0px -17px;
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+	-webkit-transition: width .1s ease-in-out;
+}
+
+#serverChatOverlay {
+	position: fixed;
+	top: -100%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	-webkit-transition: top .5s ease-in-out;
+	overflow: auto;
+}

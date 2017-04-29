@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple Games In Progress (SGIP)</title>
+  <link rel="stylesheet" href="src/style/styles.css">
+</head>
+<body>
+  <header><h1>Simple Games In Progress (SGIP)</h1></header>
+  <section>
+    <a href="javascript:" id="reloader">Reload list</a> - <a href="javascript:" id="refetcher">Refetch serverinfo</a>
+    -
+    <form style="display: inline-block;">Change listserver: <input type=text id="listserverinput" name="listserver"><input type=submit id="listserverbutton" value="Change"></form>
+    <br><br>
+    <table id="maintable" cellpadding=5 cellspacing=0 width=1>
+      <thead>
+        <tr>
+          <th align=left>Servername</th>
+          <th align=right width=1>Gamemode</th>
+          <th align=center colspan=2>Version</th>
+          <th align=center colspan=2 width=1>Capacity</th>
+          <th align=right>Uptime</th>
+          <th align=left width=1>Level</th>
+          <th align=center width=1>Ping</th>
+          <th align=left width=1>Address</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr><td colspan=12></td></tr>
+      </thead>
+      <tbody id="listbody">
+        <tr><td colspan=12 align=center><h1>Loading Serverlist</h1></td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan=12 width=1 valign=top align=center>
+            <hr>
+            <table width=800>
+              <tr>
+                <td width=1 valign=top>
+                  <img src="img/jj2launch.png">
+                </td>
+                <td rowspan=2>
+                  <h2 style="margin-bottom: 5px">JJ2 Launcher</h2>
+                  Ever wanted to quickly join a JJ2 server that you see in the serverlist (gip) but felt that .j2i files are too slow and starting JJ2 takes ages?<br>
+                  Introducing the Jazz Jackrabbit 2 URI Launcher. With it you can join JJ2 servers from any website, email or chat conversation. All that's required is a jj2:// link and JJ2 URI Launcher.<br>
+                  When you have this installed and set-up, you are ready to go. At the moment, this is the only page that uses JJ2 URI links.
+                  <br><br>
+                  <h3 style="margin-bottom: 5px">So how do I install this?</h3>
+                  <!-- There are two ways. You can use my original JJ2 launcher (cross platform) or zepect's simple Windows-installer. You can download his installer <a href="jj2launcher-installer.exe">here</a> and go to <a href="http://zepect.com/JJ2Launcher/" target="_blank">his site about JJ2 launcher</a> for more information and sourcecode (written in VB6).<br>
+                  <br>
+                  How to install my JJ2 launcher:<br>-->
+                  First <a href="jj2launcher.zip">download JJ2 Launcher</a> and put it near your Jazz2 installation, for example in C:\Games\Jazz2Launcher\<br><br>
+                  Then, use this form to generate the necessary matched files for your computer setup:<br><br>
+                  <fieldset style="background-color: #1C1C1C; font-size: 15px;">
+                    <legend><strong>Run this file when downloaded</strong></legend>
+                    <form method="get" action="jj2launcher_genreg.php">
+                      Path to JJ2 Launcher:<br>
+                      <input type="text" value="C:\Games\Jazz2Launcher\" size=70 name="path"><br>
+                      <input type=submit value="Generate registry file">
+                    </form>
+                  </fieldset>
+                  <br>
+                  <fieldset style="background-color: #1C1C1C; font-size: 15px;">
+                    <legend><strong>Put this file in your JJ2 Launcher folder</strong></legend>
+                    <em>You may leave one out if you don't have that version installed.<br>Also, please use the <a href="http://jazz2online.com/jj2plus/" target="_blank">JJ2+</a> patch!</em><br><br>
+                    <form method="get" action="jj2launcher_gensettings.php">
+                      Path to 1.23 JJ2:<br>
+                      <input type="text" value="C:\Games\Jazz2\Jazz2+.exe" size=70 name="path21"><br>
+                      Path to 1.24 JJ2:<br>
+                      <input type="text" value="C:\Games\Jazz2tsf\Jazz2+.exe" size=70 name="path24"><br>
+                      <input type=submit value="Generate settings file">
+                    </form>
+                  </fieldset>
+                  
+                  <h3 style="margin-bottom: 5px">Congratulations!</h3>
+                  You are now ready to use it! Make sure that everything work by pressing the "-&gt;" arrows above in the SGIP.
+                  You should join that server, or be asked for a password. Example:<br>
+                  <a href="jj2://djazz.se/">jj2://djazz.se/</a>
+                  
+                  <h3 style="margin-bottom: 5px">Uninstall</h3>
+                  If you want to uninstall, run uninstall.reg in your JJ2 Launcher folder and then remove that folder.
+                  <br><br>
+                  Come to JCF for <a href="http://jazz2online.com/jcf/showthread.php?t=19355" target="_blank">support and help</a> with JJ2 Launcher.
+                </td>
+              </tr>
+              <tr>
+                <td valign=bottom align=right><a href="jj2://95.109.21.11/"><img src="img/jj2launch_shortcut.png" vspace=80 hspace=10 style="border-radius: 10px;"></a></td>
+              </tr>
+            </table>
+            <hr>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <br>
+  </section>
+  
+  <footer>By djazz</footer>
+
+  <script src="src/js/json2.js"></script>
+  <script src="src/js/main.js"></script>
+</body>
+</html>
