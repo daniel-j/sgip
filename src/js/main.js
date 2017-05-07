@@ -151,7 +151,7 @@ function getParameterByName (name) {
       var storageKey = 'sgip_password_' + serverlist[i][0][0] + ':' + serverlist[i][0][1]
       var pswd = window.localStorage[storageKey] || false
 
-      serverlist[i].requests[0] = XHR('serverinfo.php?ip=' + serverlist[i][0][0] + '&port=' + serverlist[i][0][1] + '&v=' + encodeURIComponent(serverlist[i][4]) + (pswd ? '&pswd=' + encodeURIComponent(pswd) : '') + '&timestamp=' + new Date().getTime(), function (response) {
+      serverlist[i].requests[0] = XHR('serverinfo.php?ip=' + serverlist[i][0][0] + '&port=' + serverlist[i][0][1] + '&v=' + encodeURIComponent(serverlist[i][4].substring(0, 2)) + (pswd ? '&pswd=' + encodeURIComponent(pswd) : '') + '&timestamp=' + new Date().getTime(), function (response) {
         if (isReloading) {
           // console.log("Can't load serverinfo, list is refreshing");
           return
@@ -511,7 +511,7 @@ function getParameterByName (name) {
           '<td class="smallfont" align=right>&nbsp;<span style="white-space: nowrap;">pinging</span></td>' +
           '<td align=right><abbr title="Change password"><img src="img/key.gif" class="clickable"></abbr></td>' +
           "<td align=left class=smallfont style='color: rgba(255, 255, 255, 0.5)'>" + list[i][0][0] + ':' + list[i][0][1] + '</td>' +
-          "<td><a href='jj2://" + passwordOnJoin + list[i][0][0] + ':' + list[i][0][1] + '/?v=' + encodeURIComponent(list[i][4].trim()) + "' title=\"Join server\"><img src=\"img/play.png\"></a></td>"
+          "<td><a href='jj2://" + passwordOnJoin + list[i][0][0] + ':' + list[i][0][1] + '/?v=' + encodeURIComponent(list[i][4].trim().substring(0, 2)) + "' title=\"Join server\"><img src=\"img/play.png\"></a></td>"
         list[i].updater = updateServer(i, first, second)
 
         first.childNodes[0].addEventListener('click', list[i].updater, false)
