@@ -497,7 +497,7 @@ function getParameterByName (name) {
         if (ratio > 100) ratio = 100
 
         var storageKey = 'sgip_password_' + list[i][0][0] + ':' + list[i][0][1]
-        var passwordOnJoin = window.localStorage[storageKey] ? encodeURIComponent(window.localStorage[storageKey]).replace(/%3A/i, ':') + '@' : ''
+        var passwordOnJoin = window.localStorage[storageKey] ? encodeURIComponent(window.localStorage[storageKey]).replace(/%3A/i, ':') : ''
 
         first.innerHTML =
           '<td><strong class="clickable otherFont" style="font-size: 20px">&nbsp;' + colorize(list[i][7]) + '&nbsp;</strong></td>' +
@@ -511,7 +511,7 @@ function getParameterByName (name) {
           '<td class="smallfont" align=right>&nbsp;<span style="white-space: nowrap;">pinging</span></td>' +
           '<td align=right><abbr title="Change password"><img src="img/key.gif" class="clickable"></abbr></td>' +
           "<td align=left class=smallfont style='color: rgba(255, 255, 255, 0.5)'>" + list[i][0][0] + ':' + list[i][0][1] + '</td>' +
-          "<td><a href='jj2://" + passwordOnJoin + list[i][0][0] + ':' + list[i][0][1] + '/?v=' + encodeURIComponent(list[i][4].trim().substring(0, 2)) + "' title=\"Join server\"><img src=\"img/play.png\"></a></td>"
+          "<td><a href='jazz2://" + list[i][0][0] + ':' + list[i][0][1] + '/' + passwordOnJoin + "' title=\"Join server\"><img src=\"img/play.png\"></a></td>"
         list[i].updater = updateServer(i, first, second)
 
         first.childNodes[0].addEventListener('click', list[i].updater, false)
@@ -523,11 +523,11 @@ function getParameterByName (name) {
             if (newPassword === '') {
               delete window.localStorage[storageKey]
               list[row].updater()
-              serverlist[row].firstRow.childNodes[9].childNodes[0].href = 'jj2://' + list[row][0][0] + ':' + list[row][0][1] + '/?v=' + encodeURIComponent(list[row][4].trim())
+              serverlist[row].firstRow.childNodes[9].childNodes[0].href = 'jazz2://' + list[row][0][0] + ':' + list[row][0][1] + '/'
             } else if (newPassword !== null) {
               window.localStorage[storageKey] = newPassword
               list[row].updater()
-              serverlist[row].firstRow.childNodes[9].childNodes[0].href = 'jj2://' + encodeURIComponent(newPassword).replace(/%3A/i, ':') + '@' + list[row][0][0] + ':' + list[row][0][1] + '/?v=' + encodeURIComponent(list[row][4].trim())
+              serverlist[row].firstRow.childNodes[9].childNodes[0].href = 'jazz2://' + list[row][0][0] + ':' + list[row][0][1] + '/' + encodeURIComponent(newPassword).replace(/%3A/i, ':')
             }
           }
         }(i)), false)
@@ -540,7 +540,7 @@ function getParameterByName (name) {
               if (pswd.length > 0) {
                 pswd = encodeURIComponent(pswd)
                 pswd = pswd.replace(/%3A/i, ':')
-                window.document.location.href = 'jj2://' + pswd + '@' + list[row][0][0] + ':' + list[row][0][1] + '/?v=' + encodeURIComponent(list[row][4].trim())
+                window.open('jazz2://' + list[row][0][0] + ':' + list[row][0][1] + '/' + pswd)
               }
             } else {
 
