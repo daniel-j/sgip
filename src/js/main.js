@@ -235,7 +235,7 @@ function getParameterByName (name) {
 
         // console.log(serverinfo.gamemode, serverinfo.plus, serverinfo.plus.customMode);
         if (serverinfo.gamemode) { first.childNodes[1].innerHTML = writeGamemode(serverinfo.gamemode, serverinfo.plus ? serverinfo.plus.customMode : 0) }
-        first.childNodes[7].firstChild.innerHTML = serverinfo.level ? '<a title="' + serverinfo.level + '" href="http://www.jazz2online.com/downloads/search/' + encodeURIComponent(serverinfo.level) + '/" target="_blank">' + serverinfo.level.substring(0, serverinfo.level.length - 4) + '</a>' : ''
+        first.childNodes[7].firstChild.innerHTML = serverinfo.level ? '<a title="' + serverinfo.level + '" href="https://www.jazz2online.com/downloads/search/?search=' + encodeURIComponent(serverinfo.level) + '" target="_blank">' + serverinfo.level.substring(0, serverinfo.level.length - 4) + '</a>' : ''
 
         first.className = 'serverhead'
         if (serverlist[i][4].indexOf('24') === 0) {
